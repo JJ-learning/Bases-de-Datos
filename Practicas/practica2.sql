@@ -1,0 +1,26 @@
+--Eje1
+--select * from votantes where nombrecompleto like '%n';
+--Eje2
+--select * from votantes where dni like '%5%5%5%';
+--Eje3
+--select nombrecompleto from votantes where fechanacimiento > '1/01/90'; 
+--Eje4
+--select votantes.nombrecompleto, localidades.nombre from votantes, localidades where votantes.localidad=localidades.idlocalidad and localidades.numerohabitantes>300000 ;
+--Eje5
+--select votantes.nombrecompleto, provincias.comunidad from votantes, provincias, localidades 
+--where votantes.localidad = localidades.idlocalidad and localidades.provincia= provincias.idprovincia and localidades.numerohabitantes>300000;
+--Eje6
+--select partidos.idpartido,count(consultas_datos.partido) "conteo" from partidos, consultas_datos where partidos.idpartido=consultas_datos.partido group by partidos.idpartido;
+--Eje7 
+--select partidos.idpartido,count(consultas_datos.partido) from partidos, consultas_datos where partidos.idpartido=consultas_datos.partido group by partidos.idpartido;
+--Eje8
+--select partidos.nombrecompleto from partidos, consultas_datos where partidos.idpartido = consultas_datos.partido group by partidos.nombrecompleto having count(consultas_datos.partido)>10;
+--Eje9
+--select partidos.nombrecompleto, count(consultas_datos.partido) from partidos, consultas_datos where partidos.idpartido = consultas_datos.partido group by partidos.nombrecompleto having count(consultas_datos.partido)>10;
+--Eje10
+--select partidos.nombrecompleto, count(consultas_datos.partido) from partidos, consultas_datos where partidos.idpartido = consultas_datos.partido and consultas_datos.respuesta like 'Si' and consultas_datos.certidumbre>0.8 group by partidos.nombrecompleto;
+
+
+--Pruebas
+--select * from votantes where nombrecompleto='Juanjo Mendez';
+--delete from votantes where nombrecompleto='Juanjo Mendez';
